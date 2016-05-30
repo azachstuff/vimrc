@@ -9,12 +9,11 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'scrooloose/syntastic'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
-" Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar'
+Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 
@@ -24,6 +23,7 @@ filetype plugin indent on
 " let g:sierra_Pitch = 1
 " colorscheme onedark
 set number
+set nowrap
 
 " Easy Motion
 map  / <Plug>(easymotion-sn)
@@ -39,8 +39,12 @@ map  N <Plug>(easymotion-prev)
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 
+" Leave Ex mode
+nnoremap Q <nop>
+
 " Auto Reload $MYVIMRC after save
 augroup reload_vimrc " {
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
+
