@@ -14,6 +14,9 @@ Plug 'majutsushi/tagbar'
 Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'davidhalter/jedi-vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'mhartington/oceanic-next'
+Plug 'freeo/vim-kalisi'
 
 call plug#end()
 
@@ -21,7 +24,7 @@ call plug#end()
 filetype plugin indent on
 
 " let g:sierra_Pitch = 1
-" colorscheme onedark
+colorscheme onedark
 set number
 set nowrap
 
@@ -41,6 +44,9 @@ nmap <F8> :TagbarToggle<CR>
 
 " Leave Ex mode
 nnoremap Q <nop>
+
+" True Color
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Auto Reload $MYVIMRC after save
 augroup reload_vimrc " {
