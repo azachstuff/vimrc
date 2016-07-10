@@ -17,6 +17,10 @@ Plug 'davidhalter/jedi-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'mhartington/oceanic-next'
 Plug 'freeo/vim-kalisi'
+Plug 'rking/ag.vim'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+" Plug 'dkprice/vim-easygrep'
 
 call plug#end()
 
@@ -47,6 +51,31 @@ nnoremap Q <nop>
 
 " True Color
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+" Invisible chars
+" set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:< 
+" set list
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  " set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  " let g:ctrlp_use_caching = 0
+end
+
+" CtrlP 
+let g:ctrlp_working_path_mode = ''
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " Auto Reload $MYVIMRC after save
 augroup reload_vimrc " {
